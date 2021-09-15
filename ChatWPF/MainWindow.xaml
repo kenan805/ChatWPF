@@ -1,0 +1,114 @@
+﻿<Window x:Class="ChatWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ChatWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="310" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" Background="{x:Null}" ResizeMode="CanResizeWithGrip" WindowStyle="None">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkGoldenrod"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="30" Background="#1D2D48">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="30" Background="#DDD5CE" Width="310">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Canvas>
+                            <Label x:Name="lblWatch" Content="{x:Static sys:DateTime.Now}" ContentStringFormat="HH:mm" Canvas.Left="5" Foreground="Black" FontSize="12" FontWeight="SemiBold" Margin="5 2 0 0"></Label>
+                            <Image Canvas.Right="5" Margin="5" Source="Resources/charged_battery_30px.png" Width="20" Height="25.6"></Image>
+                            <Image Canvas.Right="28" Margin="5" Source="Resources/wi-fi_26px.png" Width="17" Height="25.6"></Image>
+                            <Image Canvas.Right="49" Margin="5" Source="Resources/signal_26px.png" Width="14" Height="25.6"></Image>
+                        </Canvas>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Canvas>
+                            <Image Canvas.Left="10" Margin="5" Source="Resources/back_50px.png" Width="20" Height="25.6" ToolTip="Back"></Image>
+                            <Image Canvas.Right="5" Margin="5" Source="Resources/shutdown_64px.png" Width="17" Height="25.6" MouseLeftButtonDown="Image_Close_MouseLeftButtonDown" ToolTip="Close"></Image>
+                            <Image Canvas.Right="28" Margin="5" Source="Resources/phone_24px.png" Width="20" Height="25.6" ToolTip="Call"></Image>
+                            <Label Canvas.Left= "95" Margin="3" Foreground="#1F2E47" FontSize="18" FontWeight="SemiBold" >Nebi Nebili</Label>
+                        </Canvas>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="listBox" BorderThickness="0 1 0 0" Background="Transparent">
+                            <ListBox.Resources>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Focusable" Value="False"></Setter>
+                                    <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                                </Style>
+                            </ListBox.Resources>                            
+                                <!--<StackPanel Margin="0 10 10 0">
+                                    <Border CornerRadius="15 0 15 15" Background="#1B2D42">
+                                        <Grid HorizontalAlignment="Left">
+                                            <TextBlock Text="adasda" x:Name="textBlockUser" TextWrapping="Wrap" MaxWidth="200" MaxHeight="100" Background="Transparent" Foreground="White" Margin="10"></TextBlock>
+                                        </Grid>
+                                    </Border>   
+                                    <Label Name="lblUserTime" Foreground="Black" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right">15:36</Label>
+                                </StackPanel>-->
+                            <!--<ListBoxItem x:Name="lbItemBot" HorizontalAlignment="Left" BorderBrush="Transparent" BorderThickness="0">-->
+                                <!--<StackPanel Margin="0 0 260 0">
+                                    <Border CornerRadius="0 15 15 15" Background="White">
+                                        <Grid>
+                                            <TextBlock TextWrapping="Wrap" MaxWidth="200" MaxHeight="100" Foreground="Black" Margin="10"/>
+                                        </Grid>
+                                    </Border>
+                                    <Label Content="{x:Static sys:DateTime.Now}" ContentStringFormat="HH:mm" Foreground="Black" FontSize="12" FontWeight="SemiBold" HorizontalAlignment="Right"></Label>
+                                </StackPanel>-->
+                            <!--</ListBoxItem>-->
+                        </ListBox>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <TextBox x:Name="tbMes" TextWrapping="Wrap" Foreground="Silver" FontWeight="Bold" Background="#192A40" Padding="5 0 0 0" BorderThickness="0" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" VerticalContentAlignment="Center" Margin="60 20 88 20">Write a message...</TextBox>
+                <Canvas>
+                    <Border Canvas.Left="20" Canvas.Top="20" CornerRadius="18 0 0 18" Background="#192A40" Height="38.4" Width="40">
+                        <Button  BorderThickness="0" Background="Transparent">
+                            <Image x:Name="imgsmile" Height="28.4" Width="30" Source="Resources\grinning_face_32px.png"/>
+                        </Button>
+                    </Border>
+                    <Button Canvas.Right="50" Canvas.Top="20" BorderThickness="0" Background="#192A40" Height="38.4" Width="40" >
+                        <Image Height="28.4" Width="30" Source="Resources\attach_32px.png"/>
+                    </Button>
+                    <Border Canvas.Right="20" Canvas.Top="20" CornerRadius="0 18 18 0" Background="#192A40" Height="38.4" Width="40">
+                        <Button x:Name="btnSent" Click="Button_Sent_Click" BorderThickness="0" Height="26" Width="25">
+                            <Button.Background>
+                                <ImageBrush x:Name="imgMicSent" ImageSource="Resources\sent64.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Border>
+                </Canvas>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

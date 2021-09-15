@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\ChatWPF\ChatWPF\bin\Debug\ChatWPF.exe.config
+C:\Users\user\source\repos\ChatWPF\ChatWPF\bin\Debug\ChatWPF.exe
+C:\Users\user\source\repos\ChatWPF\ChatWPF\bin\Debug\ChatWPF.pdb
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\MainWindow.g.cs
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\App.g.cs
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF_MarkupCompile.cache
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF_MarkupCompile.lref
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\MainWindow.baml
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.g.resources
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.Properties.Resources.resources
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.csproj.GenerateResource.cache
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.exe
+C:\Users\user\source\repos\ChatWPF\ChatWPF\obj\Debug\ChatWPF.pdb
